@@ -40,6 +40,7 @@ end)
 
 vim.lsp.enable('texlab')
 vim.lsp.enable('pyright')
+vim.lsp.enable('clangd')
 
 vim.g.vimtex_quickfix_open_on_warning = 0
 
