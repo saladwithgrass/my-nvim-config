@@ -13,6 +13,16 @@ return {
     init = function()
       -- VimTeX configuration goes here, e.g.
       vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_toc_config = { 
+        indent_levels = 1,
+        hotkeys_enabled = 0,
+        layer_keys = {
+          content = "C",
+          label = "B",
+          todo = "T",
+          include = "I"
+        }
+      }
     end
   },
 }

@@ -14,6 +14,19 @@ M.base46 = {
 	-- },
 }
 
+M.ui = {
+  telescope = {
+    style = "borderless"
+  },
+  statusline = {
+    theme = "default",
+    separator_style = "block"
+  },
+  cmp = {
+    style = "default"
+  }
+}
+
 -- M.nvdash = { load_on_startup = true }
 -- M.ui = {
 --       tabufline = {
@@ -22,3 +35,4 @@ M.base46 = {
 --}
 
 return M
+

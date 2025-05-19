@@ -22,3 +22,5 @@ map({ "n", "t" }, "<A-i>", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "terminal toggle floating term" })
 
+--telescope
+map({"n", "v"}, "<leader>ge", "<cmd>Telescope diagnostics<CR>")
