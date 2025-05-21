@@ -6,8 +6,8 @@ o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "number,line"
 
-opt.showcmd = false
-opt.showmode = false
+opt.showcmd = true
+opt.showmode = true
 opt.shortmess:append("c")
 
 -- Indenting
