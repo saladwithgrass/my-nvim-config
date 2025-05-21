@@ -4,7 +4,7 @@ local g = vim.g
 
 o.clipboard = "unnamedplus"
 o.cursorline = true
-o.cursorlineopt = "number"
+o.cursorlineopt = "number,line"
 
 -- Indenting
 o.expandtab = true
@@ -26,3 +26,15 @@ o.ruler = false
 
 opt.ignorecase = true
 opt.smartcase = true
+
+o.signcolumn ='yes:1'
+vim.diagnostic.config {
+  virtual_text = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "󱓻",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.HINT] = "󰌵",
+    }
+  }
+}

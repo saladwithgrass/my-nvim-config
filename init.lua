@@ -1,14 +1,6 @@
-require("config.options")
-require("config.lazy")
+vim.cmd("set termguicolors")
 
-require("config.telescope-fused")
-require("config.mappings")
-require("config.barbar_mappings")
+require "config.lazy"
+require "config.options"
+require "config.mappings"
 
---require('lspconfig').pyright.setup{}
-
-require("lsp")
-
-vim.lsp.enable('pyright')
-vim.lsp.enable('texlab')
-vim.lsp.enable('clangd')
