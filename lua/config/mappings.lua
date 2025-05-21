@@ -10,14 +10,6 @@ map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 --vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
 -- Normal --
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h", opts)
@@ -25,6 +17,7 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
+map("n", ";", ":", opts)
 map("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Better movement
