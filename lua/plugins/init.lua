@@ -15,6 +15,21 @@ return {
     init = function()
       -- VimTeX configuration goes here, e.g.
       vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_toc_config  = {
+        hide_line_numbers = false,
+        layer_status = {
+          content = 1,
+          label = 0,
+          todo = 1,
+          include = 0
+        },
+        layer_keys = {
+          content = 'C',
+          label = 'B',
+          todo =  'T',
+          include = 'I'
+        }
+      }
     end
   },
   {

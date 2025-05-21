@@ -6,12 +6,17 @@ o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "number,line"
 
+opt.showcmd = false
+opt.showmode = false
+opt.shortmess:append("c")
+
 -- Indenting
 o.expandtab = true
 o.shiftwidth = 2
 o.smartindent = true
 o.tabstop = 2
 o.softtabstop = 2
+o.showtabline = 2
 
 opt.fillchars = { eob = " " }
 o.ignorecase = true

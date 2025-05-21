@@ -8,7 +8,7 @@ local map = vim.api.nvim_set_keymap
 --Remap space as leader key
 map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+--vim.g.maplocalleader = " "
 
 -- Modes
 --   normal_mode = "n",
@@ -27,6 +27,12 @@ map("n", "<C-l>", "<C-w>l", opts)
 
 map("n", "<leader>e", ":Lex 30<cr>", opts)
 
+-- Better movement
+map("n", "H", "Hzz", opts)
+map("n", "J", "Jzz", opts)
+map("n", "K", "Kzz", opts)
+map("n", "L", "Lzz", opts)
+
 -- Resize with arrows
 map("n", "<C-Up>", ":resize -2<CR>", opts)
 map("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -34,8 +40,8 @@ map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-map("n", "<Tab>", ":bnext<CR>", opts)
-map("n", "<S-Tab>", ":bprevious<CR>", opts)
+map("n", "<S-Tab>", ":bnext<CR>", opts)
+map("n", "<Tab>", ":bprevious<CR>", opts)
 
 -- Move text up and down
 map("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -72,4 +78,13 @@ vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Telescope live gr
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 vim.keymap.set('n', '<leader>fr', builtin.lsp_references, { desc = 'Telescope lsp refrences' })
+
+-- Lsp
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+
+-- Barbar.nvim -- 
+map('n', '<S-Tab>', '<cmd>BufferPrevious<CR>', opts)
+map('n', '<Tab>', '<cmd>BufferNext<CR>', opts)
+map('n', '<C-b>',   '<cmd>BufferPick<CR>', opts)
+map('n', '<leader>x',   '<cmd>BufferClose<CR>', opts)
 
