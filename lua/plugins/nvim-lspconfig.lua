@@ -24,11 +24,12 @@ return {
           }
         }
       },
-
       clangd = {
         cmd = {"clangd"}
+      },
+      pyright = {
+        cmd = { "pyright-langserver", "--stdio" }
       }
-
     }
   },
   config = function(_, opts)

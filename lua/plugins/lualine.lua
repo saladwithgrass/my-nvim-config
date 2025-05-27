@@ -1,3 +1,13 @@
+local lsp_status = {
+  'lsp_status',
+  icon = '', -- f013
+  symbols = {
+    spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' },
+    done = '✓',
+    separator = ' ',
+  },
+}
+
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -5,11 +15,10 @@ return {
       require("lualine").setup {
         options = {
           icons_enabled = true,
-          theme = 'solarized_dark',
+          theme = 'auto',
+          --theme = require("config.lualine_sol"),
           component_separators = { left = '', right = ''},
           section_separators = { left = '', right = ''},
-          --component_separators = { left = '', right = ''},
-          --section_separators = { left = '', right = ''},
           disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -30,17 +39,7 @@ return {
           lualine_c = {'filename'},
           lualine_x = {'fileformat', 'filetype'},
           lualine_y = {},
-          lualine_z = {
-            {
-              'lsp_status',
-              icon = '', -- f013
-              symbols = {
-                spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' },
-                done = '✓',
-                separator = ' ',
-              },
-            }
-          }
+          lualine_z = { lsp_status }
         },
         inactive_sections = {
           lualine_a = {},

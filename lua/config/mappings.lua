@@ -19,12 +19,14 @@ map("n", "<C-l>", "<C-w>l", opts)
 
 map("n", ";", ":", opts)
 map("n", "<leader>e", ":Lex 30<cr>", opts)
+map("n", "<esc>", "<cmd>silent! nohls<cr>", opts)
 
 -- Better movement
-map("n", "H", "Hzz", opts)
-map("n", "J", "Jzz", opts)
-map("n", "K", "Kzz", opts)
-map("n", "L", "Lzz", opts)
+map("n", "L", "Hzz", opts)
+map("n", "H", "Lzz", opts)
+map("n", "zl", "za", opts)
+-- map("n", "J", "Jzz", opts)
+-- map("n", "K", "Kzz", opts)
 
 -- Resize with arrows
 map("n", "<C-Up>", ":resize -2<CR>", opts)
