@@ -44,42 +44,5 @@ return {
 
     end
   },
-  {
-    'maxmx03/solarized.nvim',
-    lazy = false,
-    priority = 1000,
-    ---@type solarized.config
-    opts = {},
-    config = function(_, opts)
-      vim.o.termguicolors = true
-      vim.o.background = 'light'
-      require('solarized').setup(opts)
-      vim.cmd.colorscheme 'solarized'
-    end,
-  },
-  {
-   'ray-x/aurora',
-   init = function()
-     vim.g.aurora_italic = 1
-     --vim.g.aurora_transparent = 0
-     vim.g.aurora_bold = 1
-   end,
-   config = function()
-     local aurora = require("aurora")
-      --vim.cmd.colorscheme "aurora"
-      -- override defaults
-      --vim.api.nvim_set_hl(0, '@number', {fg='#e933e3'})
-      --vim.api.nvim_set_hl(0, 'CursorLineNr', {
-      -- underline = false,
-      -- bold = true,
-      --})
-      --vim.api.nvim_set_hl(0, 'CursorLine', {
-      --  fg = 'NONE', 
-      --  bg = '#303047', 
-      --  ctermfg = 'NONE', 
-      --  ctermbg = 236,
-      --  bold = (vim.g.aurora_bold == 1) })
-
-   end
-  }
+  { "EdenEast/nightfox.nvim" }
 }
