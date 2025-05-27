@@ -7,6 +7,7 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+
     -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
     -- 'super-tab' for mappings similar to vscode (tab to accept)
     -- 'enter' for enter to accept
@@ -37,14 +38,30 @@ return {
         auto_show_delay_ms = 100,
       }
     },
-
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
+      providers = {
+        lsp = {
+          name = "LSP",
+          module = "blink.cmp.sources.lsp",
+          opts = {},
+
+          enabled = true,
+          async = false,
+          timeout_ms = 2000,
+          should_show_items = true,
+          score_offset = 10
+        },
+        snippets = {
+          name = 'snippets',
+          score_offset = 5
+        }
+      }
     },
 
-    fuzzy = { implementation = "prefer_rust_with_warning" }
+    fuzzy = { implementation = "prefer_rust_with_warning" },
   },
-  opts_extend = { "sources.default" }
+  opts_extend = { "sources.default", "sources.providers" }
 }

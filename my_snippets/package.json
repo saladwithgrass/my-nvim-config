@@ -1,0 +1,19 @@
+{
+	"name": "custom-snipps",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"python"
+				],
+				"path": "./bachelor-snippets.json"
+			},
+      {
+				"language": [
+					"tex"
+				],
+				"path": "./latex-snippets.json"
+			}
+		]
+	}
+}

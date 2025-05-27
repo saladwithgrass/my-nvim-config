@@ -37,7 +37,7 @@ local options = {
   sidescrolloff = 8,
 }
 
-vim.opt.messagesopt = "wait:3000,history:500"
+--vim.opt.messagesopt = "wait:3000,history:500"
 vim.opt.shortmess:append "c"
 
 for k, v in pairs(options) do

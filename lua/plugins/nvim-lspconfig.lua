@@ -29,6 +29,9 @@ return {
       },
       pyright = {
         cmd = { "pyright-langserver", "--stdio" }
+      },
+      texlab = {
+        cmd = {"texlab"}
       }
     }
   },

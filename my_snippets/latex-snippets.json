@@ -1,0 +1,12 @@
+{
+  "texttt": {
+    "prefix" : ["tt", "ttt", "\\tt"],
+    "body" : [
+      "\\texttt{$1}"
+    ],
+    "description" : "Faster texttt",
+    "luasnip": {
+      "priority": 2000
+    }
+  }
+}

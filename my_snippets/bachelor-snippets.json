@@ -1,0 +1,9 @@
+{
+  "Section Begin" : {
+    "prefix" : "#sec",
+    "body" : [
+      "# SECTION $1 BEGIN"
+    ]
+  }
+
+}
