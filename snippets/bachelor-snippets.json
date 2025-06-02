@@ -1,0 +1,16 @@
+{
+  "Section Begin" : {
+    "prefix" : "lstbeg",
+    "body" : [
+      "# SECTION $1 BEGIN"
+    ]
+  },
+
+  "Section End" : {
+    "prefix" : "lstend",
+    "body" : [
+      "# SECTION $1 END"
+    ]
+  }
+
+}
