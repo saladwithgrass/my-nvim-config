@@ -32,6 +32,9 @@ return {
       },
       texlab = {
         cmd = {"texlab"}
+      },
+      rust_analyzer = {
+          cmd = { "rust-analyzer" }
       }
     }
   },
