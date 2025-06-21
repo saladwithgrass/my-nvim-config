@@ -44,11 +44,41 @@ return {
 
     end
   },
+  {
+    'maxmx03/solarized.nvim',
+    lazy = false,
+    priority = 1000,
+    ---@type solarized.config
+    opts = {},
+    config = function(_, opts)
+      vim.o.termguicolors = true
+      vim.o.background = 'light'
+      require('solarized').setup(opts)
+    end,
+  },
   { "EdenEast/nightfox.nvim" },
   {
-    -- amongst your other plugins
-    -- {'akinsho/toggleterm.nvim', version = "*", config = true}
-    -- or
-    {'akinsho/toggleterm.nvim', version = "*", opts = {--[[ things you want to change go here]]}}
+    'akinsho/toggleterm.nvim', 
+    version = "*", 
+    opts = {--[[ things you want to change go here]]}
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+  {
+     "amitds1997/remote-nvim.nvim",
+     version = "*", -- Pin to GitHub releases
+     dependencies = {
+         "nvim-lua/plenary.nvim", -- For standard functions
+         "MunifTanjim/nui.nvim", -- To build the plugin UI
+         "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
+     },
+     config = true,
   }
 }
