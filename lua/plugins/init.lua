@@ -44,7 +44,8 @@ return {
 
     end
   },
-  { "EdenEast/nightfox.nvim" },
+  { "saladwithgrass/pastelfox.nvim" },
+  { "saladwithgrass/plants.nvim" },
   {
     -- amongst your other plugins
     -- {'akinsho/toggleterm.nvim', version = "*", config = true}
@@ -60,4 +61,13 @@ return {
     end,
     ft = { "markdown" },
   },
+  {
+    "rijulpaul/nightblossom.nvim",
+    name = "nightblossom",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd("colorscheme nightblossom")
+    end,
+  }
 }
