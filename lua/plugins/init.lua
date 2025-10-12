@@ -45,15 +45,15 @@ return {
     end
   },
   {
-    'maxmx03/solarized.nvim',
+    'saladwithgrass/plants.nvim',
     lazy = false,
     priority = 1000,
-    ---@type solarized.config
+    ---@type plants.config
     opts = {},
     config = function(_, opts)
       vim.o.termguicolors = true
-      vim.o.background = 'light'
-      require('solarized').setup(opts)
+      -- vim.o.background = 'light'
+      require('plants').setup(opts)
     end,
   },
   { "EdenEast/nightfox.nvim" },
@@ -80,5 +80,12 @@ return {
          "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
      },
      config = true,
+  },
+  {
+      'windwp/nvim-autopairs',
+      event = "InsertEnter",
+      config = true
+      -- use opts = {} for passing setup options
+      -- this is equivalent to setup({}) function
   }
 }

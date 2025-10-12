@@ -9,7 +9,6 @@ map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 -- Lsp
 map('n', '<leader>fr', builtin.lsp_references, { desc = 'Telescope lsp refrences' })
 map('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
-map('n', 'gq', vim.lsp.buf.code_action, { desc = 'Code actions' })
 
 -- Barbar.nvim -- 
 map('n', '<S-Tab>', '<cmd>BufferPrevious<CR>', opts)
