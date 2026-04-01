@@ -6,7 +6,14 @@ require "config.options"
 require "config.plugin_mappings"
 
 vim.cmd("colorscheme nordfox")
-require("devcontainer").setup{}
+require('nvim-docker')
+
+-- for key, value in pairs(conts) do
+--     print(key, value)
+-- end
+
 -- code
 require('langmapper').automapping({ global = true, buffer = true })
+
+
 -- end of init.lua
