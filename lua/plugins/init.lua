@@ -135,7 +135,4 @@ return {
     lazy = false,
     build = ':TSUpdate'
   },
-  {
-    'https://codeberg.org/esensar/nvim-dev-container',
-  }
 }
