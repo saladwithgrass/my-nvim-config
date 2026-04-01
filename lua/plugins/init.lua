@@ -62,15 +62,6 @@ return {
     ft = { "markdown" },
   },
   {
-    "rijulpaul/nightblossom.nvim",
-    name = "nightblossom",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd("colorscheme nightblossom")
-    end,
-  },
-  {
     "greggh/claude-code.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim", -- Required for git operations
