@@ -44,8 +44,15 @@ return {
 
     end
   },
-  { "saladwithgrass/pastelfox.nvim" },
   { "saladwithgrass/plants.nvim" },
+  {
+    "saladwithgrass/pastelfox.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("nordfox")
+    end,
+  },
   {
     -- amongst your other plugins
     -- {'akinsho/toggleterm.nvim', version = "*", config = true}
