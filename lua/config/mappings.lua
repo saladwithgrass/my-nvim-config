@@ -37,7 +37,7 @@ map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 map("n", "<S-Tab>", ":bnext<CR>", opts)
 map("n", "<Tab>", ":bprevious<CR>", opts)
-map("n", "gb", "<C-^>", opts)
+map("n", "gb", "<C-6>", opts)
 
 -- Move text up and down
 

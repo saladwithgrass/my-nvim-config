@@ -22,18 +22,19 @@ return {
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
       preset = 'enter',
-      ['<Tab>'] = { 
-        function (cmp)
-            if cmp.snippet_active() then
-                return cmp.accept()
-            else
-                return cmp.select_and_accept()
-            end
-        end,
-        'fallback'
-      },
       ['<C-k>'] = { 'select_prev', 'fallback' },
       ['<C-j>'] = { 'select_next', 'fallback' },
+      ['<Tab>'] = {
+        function(cmp)
+          if cmp.snippet_active() then
+            return cmp.accept()
+          else
+            return cmp.select_and_accept()
+          end
+        end,
+        'snippet_forward',
+        'fallback',
+      }
     },
 
     appearance = {
@@ -72,6 +73,7 @@ return {
     },
 
     fuzzy = { implementation = "prefer_rust_with_warning" },
+    signature = { enabled = true }
   },
   opts_extend = { "sources.default", "sources.providers" }
 }

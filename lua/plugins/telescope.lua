@@ -4,16 +4,38 @@ return {
     config = function ()
       require("telescope").setup {
         defaults = {
-          borderchars =  { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
+          borderchars =  { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+          theme = "dropdown",
+          layout_strategy = "horizontal",
+          layout_config = {
+            width = 0.8,
+            height = 0.8,
+          }
         },
         pickers = {
           lsp_references = {
-            theme = "dropdown"
+            theme = "dropdown",
+            layout_config = {
+              width = 0.8,
+              height = 0.8,
+            }
           },
           find_files = {
-			      -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-			      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "--glob", "!**/.cache/*", "--glob", "!**/__pycache__/*" },
-		      },
+            -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "--glob", "!build"},
+            theme = "dropdown",
+            layout_config = {
+              width = 0.8,
+              height = 0.8,
+            }
+		  },
+          live_grep = {
+            theme = "dropdown",
+            layout_config = {
+              width = 0.8,
+              height = 0.8,
+            }
+		  },
         }
       }
     end

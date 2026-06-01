@@ -20,3 +20,4 @@ map('n', '<leader>x',   '<cmd>BufferClose<CR>', opts)
 map({'n', 't', 'v'}, '<A-l>', '<cmd>ToggleTerm direction=vertical<cr>', opts)
 map({'n', 't', 'v'}, '<A-h>', '<cmd>ToggleTerm direction=horizontal<cr>', opts)
 map({'n', 't', 'v'}, '<A-f>', '<cmd>ToggleTerm direction=float<cr>', opts)
+

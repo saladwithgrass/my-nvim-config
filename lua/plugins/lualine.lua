@@ -46,20 +46,24 @@ return {
         inactive_sections = {
           lualine_a = {},
           lualine_b = {},
-          lualine_c = {'filename'},
+          lualine_c = {},
           lualine_x = {'location'},
           lualine_y = {"LSP: ", "require'lsp-status'.status()"},
           lualine_z = {}
         },
         tabline = {},
         winbar = {
+            lualine_a = {
+                'filename'
+            },
             lualine_c = {
                 {
                   function()
                       return navic.get_location()
                   end,
                   cond = function()
-                      return navic.is_available()
+                      return true
+                      -- return navic.is_available()
                   end
                 },
             }
