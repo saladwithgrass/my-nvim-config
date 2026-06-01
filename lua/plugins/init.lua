@@ -43,16 +43,32 @@ return {
       vim.g.vimtex_quickfix_open_on_warning = false
 
     end
-  },
-  { "saladwithgrass/plants.nvim" },
-  {
-    "saladwithgrass/pastelfox.nvim",
+  }, {
+    'maxmx03/solarized.nvim',
     lazy = false,
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("nordfox")
+    ---@type solarized.config
+    opts = {},
+    config = function(_, opts)
+    vim.o.termguicolors = true
+    vim.o.background = 'light'
+    require('solarized').setup(opts)
+    vim.cmd.colorscheme 'solarized'
     end,
   },
+  -- { "saladwithgrass/plants.nvim" },
+  -- {
+  --   "saladwithgrass/pastelfox.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme("nordfox")
+  --     vim.api.nvim_create_autocmd("User", {
+  --       pattern = "VeryLazy",
+  --       callback = function() vim.cmd.colorscheme("nordfox") end,
+  --     })
+  --   end,
+  -- },
   {
     -- amongst your other plugins
     -- {'akinsho/toggleterm.nvim', version = "*", config = true}
@@ -60,13 +76,13 @@ return {
     {'akinsho/toggleterm.nvim', version = "*", opts = {--[[ things you want to change go here]]}}
   },
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && yarn install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
   },
   {
     "greggh/claude-code.nvim",
@@ -143,4 +159,28 @@ return {
     build = ':TSUpdate',
     auto_install = true
   },
+  {
+      "mason-org/mason.nvim",
+      opts = {}
+  },
+  {
+      "mason-org/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = {"clangd", "ty", "lua_ls", "texlab"}
+      },
+      dependencies = {
+          { "mason-org/mason.nvim", opts = {} },
+          "neovim/nvim-lspconfig",
+      },
+  },
+  {
+    'stevearc/conform.nvim',
+    opts = {
+        formatters_by_ft = {
+            lua = { "stylua "},
+            python = { "black" },
+            xml = { "xmlformatter" }
+        }
+    },
+  }
 }

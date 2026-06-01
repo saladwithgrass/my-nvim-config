@@ -36,6 +36,7 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   foldmethod = "indent",
+  equalalways = false
 }
 
 --vim.opt.messagesopt = "wait:3000,history:500"
